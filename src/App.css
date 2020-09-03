@@ -1,38 +1,121 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Long+Cang&family=Open+Sans&display=swap');
+
+*{
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+  color: #355070;  
+}
+
+/* NAVBAR COMPONENT */
+header{
+  background-image: url('./images/yellow.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 120px;
+  position: relative;
+}
+
+h2{
+  font-family:'Long Cang', cursive; 
+  color:#355070;
+  font-size: 100px;
+}
+
+.overlay{
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left:0;
+  height: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0;
+  margin: 0;
+  background-color:#355070(10,10,0.3) ;
+}
+
+nav {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; 
+  /* hace que el titulo vaya a un lado y los links a otro */
+  padding: 0px 60px 0 60px;
+  /* top right bottom left */
+}
+
+nav li{
+  list-style:none;
+  display: inline-block;
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-top: 50px;
+}
+
+li a{
+  padding: 5px;
+  text-decoration: none;
+  font-family:'Long Cang'; 
+  font-size: 30px;
+}
+
+.icon ion-icon{
+  font-size:25px;
+  padding-right: 5px;
+}
+
+/* En este caso no necesito tunear los buttons
+.icon a{
+  background-color: blue;
+  color:white;
+  cursor: pointer;
+  text-decoration: none;
+} */
+
+
+/* HOME COMPONENT */
+.container {
+  display:flex;
+  justify-content: center;
+  flex-wrap: wrap ;
+  margin-top: 5px;
+  padding-bottom: 100px;
+  padding-top: 50px;
+  background-color:#f8e16c;
+}
+
+.image{
+  margin-right:20px;
+  margin-left:20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.addToCart{
+  position: absolute;
+  width:100%;
+  background-color:#8ea8c3;
+  transition: all 0.3s ease-in-out;
+  opacity: 0;
+  cursor: pointer;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.image:hover .cart1,
+.image:hover .cart2,
+.image:hover .cart3 {
+  bottom: 50px;
+  opacity: 1;
+  padding: 10px;
+  text-decoration: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
