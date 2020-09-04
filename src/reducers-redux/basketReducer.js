@@ -3,6 +3,7 @@ import {
   GET_NUMBERS_BASKET,
   INCREASE_QUANTITY,
   DECREASE_QUANTITY,
+  CLEAR_PRODUCT
 } from "../actions-redux/types";
 
 //Initial state for the basket.
@@ -66,7 +67,7 @@ export default (state = initialState, action) => {
       }
     case GET_NUMBERS_BASKET:
       return {
-        ...state,
+        ...state
       }
 
     case INCREASE_QUANTITY:
@@ -76,6 +77,7 @@ export default (state = initialState, action) => {
 
       return {
         ...state,
+        basketNumbers: state.basketNumbers + 1 ,
         cartCost: state.cartCost + state.products[action.payload].price,
         products: {
           ...state.products,
@@ -88,19 +90,23 @@ export default (state = initialState, action) => {
       // seria lo mismo que si hacemos state.products['PinkFlowersTshirt']
       productSelected = { ...state.products[action.payload] };
       let newCartCost=0
+      let newBasketNumbers=0
 
 
       if (productSelected.number === 0) {
         productSelected.number = 0;
         newCartCost= state.cartCost
+        newBasketNumbers= state.basketNumbers
 
       } else {
         productSelected.number -= 1;
         newCartCost= state.cartCost - state.products[action.payload].price
+        newBasketNumbers= state.basketNumbers -1
       }
 
       return {
         ...state,
+        basketNumbers: newBasketNumbers ,
         cartCost: newCartCost,
         products: {
           ...state.products,
@@ -108,6 +114,28 @@ export default (state = initialState, action) => {
           [action.payload]: productSelected,
         }
       }
+
+    case CLEAR_PRODUCT:
+      // queremos que inCart sea false y number 0. Primero envolvemos a todo el object 
+      productSelected= {...state.products[action.payload]}
+      //tenemos que saber el numero de ptos que esta en el carrito para luego cambiarlo a 0
+      let numbersBackup= productSelected.number
+
+
+      productSelected.number =0
+      productSelected.inCart=false
+
+      return {
+        ...state,
+        basketNumbers: state.basketNumbers - numbersBackup,
+        //en Cart Cost queremos traer  el coste que este en el state menos el coste del numero de este producto por su precio
+        cartCost: state.cartCost - (numbersBackup * productSelected.price),
+        // ahora queremos actulizar ptos., primero queremos traer el stado inicial de producto en el state y lo actualizamos
+        products: {
+          ...state.products,
+          [action.payload]: productSelected,
+        }
+      } 
 
     default:
       return state;

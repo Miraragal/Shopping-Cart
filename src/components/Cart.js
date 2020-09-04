@@ -4,9 +4,10 @@ import kids from "../images/kids.jpeg";
 import shirt from "../images/shirt.jpeg";
 import sweater from "../images/sweater.jpeg";
 import sweater2 from "../images/sweater2.jpeg";
-import {productQuantity} from '../actions-redux/productQuantity'
+import {productQuantity, clearProduct} from '../actions-redux/productQuantity'
 
-function Cart({ basketProps, productQuantity}) {
+
+function Cart({ basketProps, productQuantity, clearProduct}) {
   //Seria lo mismo que si pongo props.basketProps
 
   console.log(basketProps);
@@ -45,7 +46,7 @@ function Cart({ basketProps, productQuantity}) {
     return ( //cuando a hacemos .map o un loop y return algo debemos darle un id al principal parent. Viene de React donde nos dice que todos los children deben de tener un key 
       <Fragment key={index}> 
         <div className="product">
-          <ion-icon name="close-circle-outline"></ion-icon>
+          <ion-icon onClick={()=> clearProduct(product.tagName)} name="close-circle-outline"></ion-icon>
           <img src={productImages(product)} />
           <span className="sm-hide">{product.name}</span>
         </div>
@@ -85,4 +86,4 @@ const mapStateToProps = (state) => ({
   basketProps: state.basketState,
 });
 
-export default connect(mapStateToProps, {productQuantity})(Cart);
+export default connect(mapStateToProps, {productQuantity, clearProduct})(Cart);
