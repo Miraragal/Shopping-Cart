@@ -26,7 +26,7 @@ const Home = (props) => {
         <img src={shirt} alt="Tshirt" />
         <h3>Tshirt</h3>
         <h3>$30,00</h3>
-        <a onClick={()=>props.addBasket(`PinkFlowersTshirt`)} className="addToCart cart1" href="#">
+        <a onClick={()=>props.addBasket('pinkFlowersTshirt')} className="addToCart cart1" href="#">
           Add to Cart
         </a>
       </div>
@@ -34,7 +34,7 @@ const Home = (props) => {
         <img src={sweater} alt="Sweater" />
         <h3>Sweaters</h3>
         <h3>$50,00</h3>
-        <a onClick={()=> props.addBasket(`IceberSweater`)} className="addToCart cart2" href="#">
+        <a onClick={()=> props.addBasket('iceberSweater')} className="addToCart cart2" href="#">
           Add to Cart
         </a>
       </div>
@@ -42,7 +42,7 @@ const Home = (props) => {
         <img src={sweater2} alt="Sweater" />
         <h3>Unisex</h3>
         <h3>$50,00</h3>
-        <a onClick={()=>props.addBasket(`PinkPanterSweater`)} className="addToCart cart3" href="#">
+        <a onClick={()=>props.addBasket('pinkPanterSweater')} className="addToCart cart3" href="#">
           Add to Cart
         </a>
       </div>
@@ -50,7 +50,7 @@ const Home = (props) => {
         <img src={kids} alt="Kids" />
         <h3>Kids</h3>
         <h3>$20,00</h3>
-        <a onClick={()=>props.addBasket(`MayanComboSweater`)} className="addToCart cart4" href="#">
+        <a onClick={()=>props.addBasket('mayanComboSweater')} className="addToCart cart4" href="#">
           Add to Cart
         </a>
       </div>
