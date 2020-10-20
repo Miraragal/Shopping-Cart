@@ -13,8 +13,8 @@ The shopping cart, in it's finsihed form will be able to:
 - *Display the total cost of all items in the cart
 - *Save the cart to local storage, persisting the cart between browsing sessions
 
-📌
-#### Requirements
+
+#### Requirements 📌
 
 - Node.js
 - NPM
