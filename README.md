@@ -14,6 +14,10 @@ The shopping cart, in it's finsihed form will be able to:
 - Display the total cost of all items in the cart
 - Save the cart to local storage, persisting the cart between browsing sessions
 
+#### Technologies
+![JavaScript](https://img.shields.io/badge/-JavaScript-black?style=flat-square&logo=javascript)
+![React JS](https://img.shields.io/badge/-ReactJS-black?style=flat-square&logo=react)
+![React JS](https://img.shields.io/badge/-Redux-black?style=flat-square&logo=redux)
 
 #### Requirements 📌
 
