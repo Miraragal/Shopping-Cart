@@ -4,7 +4,7 @@ This simple shopping cart prototype shows how React components and Redux can be 
 
 #### Features
 
-The shopping cart, in it's finsihed form will be able to:
+The shopping cart, in it's finished form will be able to:
 - Add Items to the cart
 - Remove Items from the cart
 - Clear all items from the cart
